@@ -67,4 +67,26 @@ class KotlinTests {
         assertThat(letterCountRecursion('a', "abbc")).isEqualTo(1)
         assertThat(letterCountRecursion('a', "abbca")).isEqualTo(2)
     }
+
+    @Test
+    fun listSumLoopTests() {
+        assertThat(listSumLoop(listOf())).isEqualTo(0)
+        assertThat(listSumLoop(listOf(1, 2, 3))).isEqualTo(6)
+        assertThat(listSumLoop(listOf(1, 2, 3, 4, 5, 6))).isEqualTo(21)
+    }
+
+    @Test
+    fun listSumStreamTests() {
+        assertThat(listSumStream(listOf())).isEqualTo(0)
+        assertThat(listSumStream(listOf(1, 2, 3))).isEqualTo(6)
+        assertThat(listSumStream(listOf(1, 2, 3, 4, 5, 6))).isEqualTo(21)
+    }
+
+    @Test
+    fun listSumRecursiveTests() {
+        assertThat(listSumRecursion(listOf())).isEqualTo(0)
+        assertThat(listSumRecursion(listOf(1, 2, 3))).isEqualTo(6)
+        assertThat(listSumRecursion(listOf(1, 2, 3, 4, 5, 6))).isEqualTo(21)
+    }
+
 }

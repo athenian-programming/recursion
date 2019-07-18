@@ -1,5 +1,6 @@
 package org.athenian;
 
+import org.assertj.core.util.Lists;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,6 +20,21 @@ public class JavaTests {
         assertThat(isPalindromeLoop("cde")).isFalse();
         assertThat(isPalindromeLoop("abcdcba")).isTrue();
         assertThat(isPalindromeLoop("abcdebs")).isFalse();
+    }
+
+
+    @Test
+    public void palindromeStreamTests() {
+        /*
+        assertThat(isPalindromeStream("")).isTrue();
+        assertThat(isPalindromeStream("a")).isTrue();
+        assertThat(isPalindromeStream("bb")).isTrue();
+        assertThat(isPalindromeStream("bc")).isFalse();
+        assertThat(isPalindromeStream("cdc")).isTrue();
+        assertThat(isPalindromeStream("cde")).isFalse();
+        assertThat(isPalindromeStream("abcdcba")).isTrue();
+        assertThat(isPalindromeStream("abcdebs")).isFalse();
+         */
     }
 
     @Test
@@ -58,5 +74,26 @@ public class JavaTests {
         assertThat(letterCountRecursion('a', "bb")).isEqualTo(0);
         assertThat(letterCountRecursion('a', "abbc")).isEqualTo(1);
         assertThat(letterCountRecursion('a', "abbca")).isEqualTo(2);
+    }
+
+    @Test
+    public void listSumLoopTests() {
+        assertThat(ListSum.listSumLoop(Lists.list())).isEqualTo(0);
+        assertThat(ListSum.listSumLoop(Lists.list(1, 2, 3))).isEqualTo(6);
+        assertThat(ListSum.listSumLoop(Lists.list(1, 2, 3, 4, 5, 6))).isEqualTo(21);
+    }
+
+    @Test
+    public void listSumStreamTests() {
+        assertThat(ListSum.listSumStream(Lists.list())).isEqualTo(0);
+        assertThat(ListSum.listSumStream(Lists.list(1, 2, 3))).isEqualTo(6);
+        assertThat(ListSum.listSumStream(Lists.list(1, 2, 3, 4, 5, 6))).isEqualTo(21);
+    }
+
+    @Test
+    public void listSumRecursiveTests() {
+        assertThat(ListSum.listSumRecursion(Lists.list())).isEqualTo(0);
+        assertThat(ListSum.listSumRecursion(Lists.list(1, 2, 3))).isEqualTo(6);
+        assertThat(ListSum.listSumRecursion(Lists.list(1, 2, 3, 4, 5, 6))).isEqualTo(21);
     }
 }

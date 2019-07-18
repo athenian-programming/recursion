@@ -24,8 +24,8 @@ public class LetterCount {
         if (s.length() == 0)
             return 0;
 
-        final String firstLetter = s.substring(0, 1);
-        final String remainingLetters = s.substring(1);
+        String firstLetter = s.substring(0, 1);
+        String remainingLetters = s.substring(1);
 
         if (firstLetter.equals(Character.toString(c)))
             return 1 + letterCountRecursion(c, remainingLetters);
