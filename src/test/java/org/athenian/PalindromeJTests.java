@@ -3,8 +3,7 @@ package org.athenian;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.athenian.Palindrome.isPalindromeLoop;
-import static org.athenian.Palindrome.isPalindromeRecursion;
+import static org.athenian.Palindrome.*;
 
 public class PalindromeJTests {
 
@@ -35,7 +34,6 @@ public class PalindromeJTests {
 
     @Test
     public void palindromeStreamTests() {
-        /*
         assertThat(isPalindromeStream("")).isTrue();
         assertThat(isPalindromeStream("a")).isTrue();
         assertThat(isPalindromeStream("bb")).isTrue();
@@ -44,6 +42,5 @@ public class PalindromeJTests {
         assertThat(isPalindromeStream("cde")).isFalse();
         assertThat(isPalindromeStream("abcdcba")).isTrue();
         assertThat(isPalindromeStream("abcdebs")).isFalse();
-         */
     }
 }

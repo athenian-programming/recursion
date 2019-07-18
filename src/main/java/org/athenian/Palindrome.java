@@ -1,5 +1,7 @@
 package org.athenian;
 
+import java.util.stream.IntStream;
+
 public class Palindrome {
 
     public static boolean isPalindromeLoop(String s) {
@@ -25,21 +27,12 @@ public class Palindrome {
     }
 
     public static boolean isPalindromeStream(String s) {
-        String[] firstHalf = s.substring(0, s.length() / 2).split("");
-        String[] secondHalf = reverse(s.substring(s.length() - (s.length() / 2))).split("");
+        String[] str = s.split("");
+        int len = str.length;
 
-        //List<String> list = Stream.of(firstHalf)
-        //        .collect(Collectors.toMap(o -> {}));
-
-        return true;
-    }
-
-    public static String reverse(String s) {
-        final int len = s.length();
-        final StringBuilder sb = new StringBuilder(len);
-        for (int i = len - 1; i >= 0; i--)
-            sb.append(s.charAt(i));
-        return sb.toString();
+        return IntStream
+                .range(0, len / 2)
+                .allMatch(i -> str[i].equals(str[len - i - 1]));
     }
 
 }
