@@ -13,13 +13,6 @@ public class LetterCount {
         return cnt;
     }
 
-    public static int letterCountStream(char c, String s) {
-        return (int) s.chars()
-                .filter(value -> value == c)
-                .mapToLong(value -> 1)
-                .sum();
-    }
-
     public static int letterCountRecursion(char c, String s) {
         if (s.length() == 0)
             return 0;
@@ -31,5 +24,12 @@ public class LetterCount {
             return 1 + letterCountRecursion(c, remainingLetters);
         else
             return letterCountRecursion(c, remainingLetters);
+    }
+
+    public static int letterCountStream(char c, String s) {
+        return (int) s.chars()
+                .filter(value -> value == c)
+                .mapToLong(value -> 1)
+                .sum();
     }
 }

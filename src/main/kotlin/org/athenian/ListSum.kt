@@ -8,7 +8,7 @@ fun listSumLoop(list: List<Int>): Int {
     return sum
 }
 
-fun listSumStream(list: List<Int>) = list.sum()
-
 fun listSumRecursion(list: List<Int>): Int =
     if (list.size == 0) 0 else list[0] + listSumRecursion(list.slice(1..list.size - 1))
+
+fun listSumStream(list: List<Int>) = list.sum()

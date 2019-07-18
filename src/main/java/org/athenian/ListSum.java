@@ -10,16 +10,16 @@ public class ListSum {
         return sum;
     }
 
+    public static int listSumRecursion(List<Integer> list) {
+        if (list.size() == 0)
+            return 0;
+        return list.get(0) + listSumRecursion(list.subList(1, list.size()));
+    }
+
     public static int listSumStream(List<Integer> list) {
         return list
                 .stream()
                 .mapToInt(i -> i)
                 .sum();
-    }
-
-    public static int listSumRecursion(List<Integer> list) {
-        if (list.size() == 0)
-            return 0;
-        return list.get(0) + listSumRecursion(list.subList(1, list.size()));
     }
 }

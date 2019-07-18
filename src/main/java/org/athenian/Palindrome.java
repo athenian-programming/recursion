@@ -13,12 +13,15 @@ public class Palindrome {
         return true;
     }
 
-    public static String reverse(String s) {
-        final int len = s.length();
-        final StringBuilder sb = new StringBuilder(len);
-        for (int i = len - 1; i >= 0; i--)
-            sb.append(s.charAt(i));
-        return sb.toString();
+    public static boolean isPalindromeRecursion(String s) {
+        if (s.length() <= 1)
+            return true;
+
+        String firstLetter = s.substring(0, 1);
+        String lastLetter = s.substring(s.length() - 1);
+        String middleLetters = s.substring(1, s.length() - 1);
+
+        return firstLetter.equals(lastLetter) && isPalindromeRecursion(middleLetters);
     }
 
     public static boolean isPalindromeStream(String s) {
@@ -31,14 +34,12 @@ public class Palindrome {
         return true;
     }
 
-    public static boolean isPalindromeRecursion(String s) {
-        if (s.length() <= 1)
-            return true;
-
-        String firstLetter = s.substring(0, 1);
-        String lastLetter = s.substring(s.length() - 1);
-        String middleLetters = s.substring(1, s.length() - 1);
-
-        return firstLetter.equals(lastLetter) && isPalindromeRecursion(middleLetters);
+    public static String reverse(String s) {
+        final int len = s.length();
+        final StringBuilder sb = new StringBuilder(len);
+        for (int i = len - 1; i >= 0; i--)
+            sb.append(s.charAt(i));
+        return sb.toString();
     }
+
 }

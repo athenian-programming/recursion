@@ -11,6 +11,17 @@ fun isPalindromeLoop(s: String): Boolean {
     return true
 }
 
+fun isPalindromeRecursion(s: String): Boolean {
+    if (s.length <= 1)
+        return true
+
+    val firstLetter = s.slice(0..0)
+    val lastLetter = s.slice(s.length - 1..s.length - 1)
+    val middleLetters = s.slice(1..s.length - 2)
+
+    return (firstLetter == lastLetter) && isPalindromeRecursion(middleLetters)
+}
+
 fun isPalindromeStream(s: String): Boolean {
     if (s.length <= 1)
         return true
@@ -22,15 +33,4 @@ fun isPalindromeStream(s: String): Boolean {
     return !firstHalf
         .zip(secondHalf.reversed())
         .any { (c1, c2) -> c1 != c2 }
-}
-
-fun isPalindromeRecursion(s: String): Boolean {
-    if (s.length <= 1)
-        return true
-
-    val firstLetter = s.slice(0..0)
-    val lastLetter = s.slice(s.length - 1..s.length - 1)
-    val middleLetters = s.slice(1..s.length - 2)
-
-    return (firstLetter == lastLetter) && isPalindromeRecursion(middleLetters)
 }

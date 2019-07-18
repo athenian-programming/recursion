@@ -11,12 +11,6 @@ fun letterCountLoop(c: Char, s: String): Int {
     return cnt
 }
 
-fun letterCountStream(c: Char, s: String) =
-    s.chars()
-        .filter { it == c.toInt() }
-        .map { 1 }
-        .sum()
-
 fun letterCountRecursion(c: Char, s: String): Int {
     if (s.length == 0)
         return 0
@@ -26,3 +20,9 @@ fun letterCountRecursion(c: Char, s: String): Int {
 
     return (if (firstLetter == Character.toString(c)) 1 else 0) + letterCountRecursion(c, remainingLetters)
 }
+
+fun letterCountStream(c: Char, s: String) =
+    s.chars()
+        .filter { it == c.toInt() }
+        .map { 1 }
+        .sum()
