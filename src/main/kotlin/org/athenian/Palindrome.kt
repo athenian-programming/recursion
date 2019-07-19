@@ -1,26 +1,25 @@
 package org.athenian
 
-fun isPalindromeLoop(s: String): Boolean {
-    val len = s.length
-    for (i in 0 until s.length / 2) {
-        val beginLetter = s.substring(i, i + 1)
-        val endLetter = s.substring(len - i - 1, len - i)
-        if (beginLetter != endLetter)
-            return false
+fun isPalindromeLoop(s: String) =
+    when {
+        s.isEmpty() -> true
+        else -> {
+            val len = s.length
+            (0..len / 2).forEach {
+                val beginLetter = s[it]
+                val endLetter = s[len - it - 1]
+                if (beginLetter != endLetter)
+                    return false
+            }
+            true
+        }
     }
-    return true
-}
 
-fun isPalindromeRecursion(s: String): Boolean {
-    if (s.length <= 1)
-        return true
-
-    val firstLetter = s.slice(0..0)
-    val lastLetter = s.slice(s.length - 1..s.length - 1)
-    val middleLetters = s.slice(1..s.length - 2)
-
-    return (firstLetter == lastLetter) && isPalindromeRecursion(middleLetters)
-}
+fun isPalindromeRecursion(s: String): Boolean =
+    when {
+        s.length <= 1 -> true
+        else -> (s[0] == s[s.length - 1]) && isPalindromeRecursion(s.slice(1..s.length - 2))
+    }
 
 fun isPalindromeStream(s: String): Boolean {
     if (s.length <= 1)

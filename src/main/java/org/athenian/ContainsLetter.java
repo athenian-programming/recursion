@@ -3,17 +3,15 @@ package org.athenian;
 public class ContainsLetter {
 
     public static boolean containsLetterLoop(char c, String s) {
-        String cstr = Character.toString(c);
-
         for (int i = 0; i < s.length(); i++)
-            if (s.substring(i, i + 1).equals(cstr))
+            if (s.substring(i, i + 1).equals(Character.toString(c)))
                 return true;
 
         return false;
     }
 
     public static boolean containsLetterRecursion(char c, String s) {
-        if (s.length() == 0)
+        if (s.isEmpty())
             return false;
 
         String firstLetter = s.substring(0, 1);

@@ -11,7 +11,7 @@ public class ListSum {
     }
 
     public static int listSumRecursion(List<Integer> list) {
-        if (list.size() == 0)
+        if (list.isEmpty())
             return 0;
         return list.get(0) + listSumRecursion(list.subList(1, list.size()));
     }
