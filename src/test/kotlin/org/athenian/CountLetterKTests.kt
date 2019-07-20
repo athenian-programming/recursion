@@ -3,7 +3,7 @@ package org.athenian
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class LetterCountKTests {
+class CountLetterKTests {
 
     @Test
     fun letterCountLoopTests() {

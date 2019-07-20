@@ -13,8 +13,4 @@ fun countLetterRecursion(c: Char, s: String): Int =
         else -> (if (s[0] == c) 1 else 0) + countLetterRecursion(c, s.substring(1))
     }
 
-fun countLetterStream(c: Char, s: String) =
-    s.chars()
-        .filter { it == c.toInt() }
-        .map { 1 }
-        .sum()
+fun countLetterStream(c: Char, s: String) = s.chars().filter { it == c.toInt() }.count()

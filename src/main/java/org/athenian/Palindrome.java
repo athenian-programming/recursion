@@ -27,12 +27,12 @@ public class Palindrome {
     }
 
     public static boolean isPalindromeStream(String s) {
-        String[] str = s.split("");
+        char[] str = s.toCharArray();
         int len = str.length;
 
         return IntStream
                 .range(0, len / 2)
-                .allMatch(i -> str[i].equals(str[len - i - 1]));
+                .allMatch(i -> str[i] == (str[len - i - 1]));
     }
 
 }

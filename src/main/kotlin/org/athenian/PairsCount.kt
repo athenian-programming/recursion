@@ -22,6 +22,6 @@ fun pairsCountStream(s: String): Int {
     return IntStream
         .range(0, s.length - 1)
         .filter { i -> s[i] == s[i + 1] }
-        .mapToLong { value -> 1 }
-        .sum().toInt()
+        .count()
+        .toInt()
 }

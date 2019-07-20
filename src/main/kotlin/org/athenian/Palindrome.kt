@@ -21,15 +21,15 @@ fun isPalindromeRecursion(s: String): Boolean =
         else -> (s[0] == s[s.length - 1]) && isPalindromeRecursion(s.slice(1..s.length - 2))
     }
 
-fun isPalindromeStream(s: String): Boolean {
-    if (s.length <= 1)
-        return true
-
-    val half = s.length / 2
-    val firstHalf = s.slice(0..half - 1)
-    val secondHalf = s.slice(s.length - half..s.length - 1)
-
-    return !firstHalf
-        .zip(secondHalf.reversed())
-        .any { (c1, c2) -> c1 != c2 }
-}
+fun isPalindromeStream(s: String) =
+    when {
+        s.length <= 1 -> true
+        else -> {
+            val half = s.length / 2
+            val firstHalf = s.slice(0..half - 1)
+            val secondHalf = s.slice(s.length - half..s.length - 1)
+            !firstHalf
+                .zip(secondHalf.reversed())
+                .any { (c1, c2) -> c1 != c2 }
+        }
+    }

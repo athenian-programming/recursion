@@ -6,13 +6,15 @@ public class ListSum {
 
     public static int listSumLoop(List<Integer> list) {
         int sum = 0;
-        for (Integer i : list) sum += i;
+        for (Integer i : list)
+            sum += i;
         return sum;
     }
 
     public static int listSumRecursion(List<Integer> list) {
         if (list.isEmpty())
             return 0;
+
         return list.get(0) + listSumRecursion(list.subList(1, list.size()));
     }
 

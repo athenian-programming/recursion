@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.athenian.CountLetter.*;
 
-public class LetterCountJTests {
+public class CountLetterJTests {
 
     @Test
     public void letterCountLoopTests() {
