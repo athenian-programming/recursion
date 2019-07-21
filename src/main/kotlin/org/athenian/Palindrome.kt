@@ -5,7 +5,7 @@ fun isPalindromeLoop(s: String) =
         s.isEmpty() -> true
         else -> {
             val len = s.length
-            (0..len / 2).forEach {
+            repeat(len / 2) {
                 val beginLetter = s[it]
                 val endLetter = s[len - it - 1]
                 if (beginLetter != endLetter)

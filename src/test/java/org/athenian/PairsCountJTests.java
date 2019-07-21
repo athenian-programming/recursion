@@ -17,6 +17,7 @@ public class PairsCountJTests {
         assertThat(pairsCountLoop("aabb")).isEqualTo(2);
         assertThat(pairsCountLoop("caabbc")).isEqualTo(2);
         assertThat(pairsCountLoop("aabbccdede")).isEqualTo(3);
+        assertThat(pairsCountLoop("aabbccdedee")).isEqualTo(4);
         assertThat(pairsCountLoop("abcdefg")).isEqualTo(0);
     }
 
@@ -30,6 +31,7 @@ public class PairsCountJTests {
         assertThat(pairsCountRecursion("aabb")).isEqualTo(2);
         assertThat(pairsCountRecursion("caabbc")).isEqualTo(2);
         assertThat(pairsCountRecursion("aabbccdede")).isEqualTo(3);
+        assertThat(pairsCountRecursion("aabbccdedee")).isEqualTo(4);
         assertThat(pairsCountRecursion("abcdefg")).isEqualTo(0);
     }
 
@@ -43,6 +45,7 @@ public class PairsCountJTests {
         assertThat(pairsCountStream("aabb")).isEqualTo(2);
         assertThat(pairsCountStream("caabbc")).isEqualTo(2);
         assertThat(pairsCountStream("aabbccdede")).isEqualTo(3);
+        assertThat(pairsCountStream("aabbccdedee")).isEqualTo(4);
         assertThat(pairsCountStream("abcdefg")).isEqualTo(0);
     }
 }

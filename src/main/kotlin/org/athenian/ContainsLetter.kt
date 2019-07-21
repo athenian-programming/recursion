@@ -4,7 +4,7 @@ fun containsLetterLoop(c: Char, s: String) =
     when {
         s.isEmpty() -> false
         else -> {
-            (0..s.length - 1).forEach {
+            repeat(s.length) {
                 if (s[it] == c)
                     return true
             }

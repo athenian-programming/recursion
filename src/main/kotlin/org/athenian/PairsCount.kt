@@ -5,8 +5,8 @@ import java.util.stream.IntStream
 
 fun pairsCountLoop(s: String): Int {
     var cnt = 0
-    (0..s.length - 1).forEach {
-        if (s[it] == s[it])
+    repeat(s.length - 1) {
+        if (s[it] == s[it + 1])
             cnt++
     }
     return cnt
