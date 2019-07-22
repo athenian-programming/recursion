@@ -29,8 +29,8 @@ fun isPalindromeStream(s: String) =
             val half = s.length / 2
             val firstHalf = s.slice(0..half - 1)
             val secondHalf = s.slice(s.length - half..s.length - 1)
-            !firstHalf
+            firstHalf
                 .zip(secondHalf.reversed())
-                .any { (c1, c2) -> c1 != c2 }
+                .all { (c1, c2) -> c1 == c2 }
         }
     }
