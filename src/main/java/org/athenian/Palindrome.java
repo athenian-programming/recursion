@@ -21,12 +21,11 @@ public class Palindrome {
 
         String firstLetter = s.substring(0, 1);
         String lastLetter = s.substring(s.length() - 1);
-        String middleLetters = s.substring(1, s.length() - 1);
-
         if (!firstLetter.equals(lastLetter))
             return false;
-        else
-            return isPalindromeRecursion(middleLetters);
+
+        String middleLetters = s.substring(1, s.length() - 1);
+        return isPalindromeRecursion(middleLetters);
     }
 
     public static boolean isPalindromeStream(String s) {
