@@ -18,7 +18,8 @@ fun isPalindromeLoop(s: String) =
 fun isPalindromeRecursion(s: String): Boolean =
     when {
         s.length <= 1 -> true
-        else -> (s[0] == s[s.length - 1]) && isPalindromeRecursion(s.slice(1..s.length - 2))
+        s[0] != s[s.length - 1] -> false
+        else -> isPalindromeRecursion(s.slice(1..s.length - 2))
     }
 
 fun isPalindromeStream(s: String) =

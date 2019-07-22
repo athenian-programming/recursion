@@ -23,7 +23,10 @@ public class Palindrome {
         String lastLetter = s.substring(s.length() - 1);
         String middleLetters = s.substring(1, s.length() - 1);
 
-        return firstLetter.equals(lastLetter) && isPalindromeRecursion(middleLetters);
+        if (!firstLetter.equals(lastLetter))
+            return false;
+        else
+            return isPalindromeRecursion(middleLetters);
     }
 
     public static boolean isPalindromeStream(String s) {
